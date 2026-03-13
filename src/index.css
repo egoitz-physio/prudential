@@ -1,0 +1,253 @@
+/* Elegant Typography: Outfit + Philosopher */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Medicus-inspired deep blue palette */
+  --color-surface: #0a1628; /* Deep navy - main background */
+  --color-surface-dark: #060f1d; /* Even darker navy */
+  --color-surface-elevated: #101f38; /* Elevated navy */
+  --color-accent: #c9a96e; /* Champagne gold - luxury accent */
+  --color-accent-light: #e0c99a;
+  --color-medicus-blue: #1a3a6e; /* Medicus brand blue */
+  --color-cream: #f5f2ed;
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: linear-gradient(180deg, #0a1628 0%, #060f1d 100%);
+  color: #f5f2ed;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: rgba(201, 169, 110, 0.3);
+  color: #c9a96e;
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: 'Philosopher', Georgia, serif;
+  font-weight: 700;
+}
+
+.font-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #c9a96e 0%, #e0c99a 50%, #c9a96e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heading-display {
+  font-family: 'Philosopher', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Elegant Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: #c9a96e;
+  color: #0a1628;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background-color: #e0c99a;
+  box-shadow: 0 0 40px -10px rgba(201, 169, 110, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border: 1px solid rgba(245, 242, 237, 0.2);
+  color: #f5f2ed;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ghost:hover {
+  border-color: #c9a96e;
+  color: #c9a96e;
+}
+
+/* Section label - refined */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(245, 242, 237, 0.5);
+  border: 1px solid rgba(245, 242, 237, 0.1);
+  background: rgba(26, 58, 110, 0.2);
+  border-radius: 0;
+}
+
+/* Nav link */
+.nav-link {
+  position: relative;
+  color: rgba(245, 242, 237, 0.5);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: color 0.4s ease;
+}
+
+.nav-link:hover {
+  color: #f5f2ed;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c9a96e;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Stat value - elegant */
+.stat-value {
+  font-family: 'Philosopher', Georgia, serif;
+  font-weight: 700;
+  color: #c9a96e;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Noise overlay */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: var(--noise);
+  background-repeat: repeat;
+}
+
+/* Glow spot - blue tinted */
+.glow-spot {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  background: radial-gradient(circle, rgba(26, 58, 110, 0.3) 0%, transparent 70%);
+}
+
+/* Gold glow for accents */
+.glow-gold {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+}
+
+/* Elegant divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 242, 237, 0.1), transparent);
+}
+
+/* Custom scrollbar - refined */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 2px;
+}
+
+/* No scrollbar utility */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #c9a96e;
+}
+
+/* Smooth image transitions */
+img {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Card hover effect */
+.card-elegant {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(180deg, rgba(16, 31, 56, 0.5) 0%, rgba(10, 22, 40, 0.8) 100%);
+  border: 1px solid rgba(245, 242, 237, 0.05);
+}
+
+.card-elegant:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 169, 110, 0.2);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Surface backgrounds */
+.bg-surface {
+  background-color: #0a1628;
+}
+
+.bg-surface-dark {
+  background-color: #060f1d;
+}
+
+.bg-surface-elevated {
+  background-color: #101f38;
+}
