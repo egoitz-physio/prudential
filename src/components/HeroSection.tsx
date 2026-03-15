@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 
-interface HeroSectionProps {
-  onExplore: () => void
-}
-
-export default function HeroSection({ onExplore }: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col">
       {/* Background Image */}

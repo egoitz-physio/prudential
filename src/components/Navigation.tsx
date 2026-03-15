@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 
 interface NavigationProps {
   scrolled: boolean
-  onExplore: () => void
 }
 
 export default function Navigation({ scrolled }: NavigationProps) {

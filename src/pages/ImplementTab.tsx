@@ -9,7 +9,6 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
   const borderColor = isDark ? 'bg-white/5' : 'bg-black/5'
   const textMain = isDark ? 'text-cream' : 'text-[#0a1628]'
   const textMuted = isDark ? 'text-cream/40' : 'text-[#0a1628]/50'
-  const textAccent = isDark ? 'text-accent' : 'text-[#1a3a6e]'
 
   const phases = [
     { num: '01', title: 'Diseño', duration: '2 semanas', items: ['Definición de alcance con Medicus', 'Personalización de marca', 'Configuración de dashboard', 'Integración técnica (opcional)'] },

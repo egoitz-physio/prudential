@@ -21,10 +21,6 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleExplore = () => {
-    document.getElementById('content')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <div className="min-h-screen relative bg-gradient-to-b from-[#0a1628] to-[#060f1d]">
       {/* Noise overlay */}
@@ -37,8 +33,8 @@ function App() {
         <div className="glow-gold w-[400px] h-[400px] top-1/3 right-1/4" />
       </div>
 
-      <Navigation scrolled={scrolled} onExplore={handleExplore} />
-      <HeroSection onExplore={handleExplore} />
+      <Navigation scrolled={scrolled} />
+      <HeroSection />
       
       {/* Sticky Tab Menu */}
       <TabSection activeTab={activeTab} setActiveTab={setActiveTab} isDark={true} />
