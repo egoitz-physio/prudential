@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-medicus-fisio-tech.png"
+          src="/images/new-hero.png"
           alt="Medicus Fisioterapia Digital"
           className="w-full h-full object-cover object-center"
         />
