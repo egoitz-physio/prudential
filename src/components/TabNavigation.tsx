@@ -28,12 +28,17 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
         <div className="flex items-center justify-between h-20">
           {/* Logo mini */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 border border-accent/30 flex items-center justify-center">
-              <span className="font-display text-accent text-sm">F</span>
-            </div>
-            <span className="text-cream/30 text-xs uppercase tracking-[0.2em] font-light hidden sm:block">
-              Propuesta
-            </span>
+            <img
+              src="/images/fisify-logo-white.png"
+              alt="Fisify"
+              className="h-5 brightness-0 invert opacity-80"
+            />
+            <span className="text-cream/30 text-xs font-light">×</span>
+            <img
+              src="/images/medicus-logo-white.png"
+              alt="Medicus"
+              className="h-4 brightness-0 invert opacity-80"
+            />
           </div>
 
           {/* Tabs */}

@@ -55,16 +55,16 @@ export default function TabSection({ activeTab, setActiveTab, isDark }: TabSecti
             transition={{ duration: 0.3 }}
             className="flex items-center gap-3 overflow-hidden"
           >
-            <img 
-              src="/images/fisify-logo-white.png" 
-              alt="Fisify" 
-              className="h-5 opacity-80"
+            <img
+              src="/images/fisify-logo-white.png"
+              alt="Fisify"
+              className={`h-5 opacity-80 ${isDark ? 'brightness-0 invert' : 'brightness-0'}`}
             />
             <span className={`text-xs ${isDark ? 'text-cream/30' : 'text-[#0a1628]/30'}`}>×</span>
-            <img 
-              src="/images/medicus-logo-white.png" 
-              alt="Medicus" 
-              className="h-4 opacity-80"
+            <img
+              src="/images/medicus-logo-white.png"
+              alt="Medicus"
+              className={`h-4 opacity-80 ${isDark ? 'brightness-0 invert' : 'brightness-0'}`}
             />
           </motion.div>
 
@@ -75,15 +75,15 @@ export default function TabSection({ activeTab, setActiveTab, isDark }: TabSecti
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative flex items-center gap-3 px-6 lg:px-8 py-6 transition-all duration-300 ${
-                  activeTab === tab.id 
+                  activeTab === tab.id
                     ? isDark ? 'text-cream' : 'text-[#0a1628]'
-                    : isDark ? 'text-cream/30 hover:text-cream/60' : 'text-[#0a1628]/30 hover:text-[#0a1628]/60'
+                    : isDark ? 'text-cream/60 hover:text-cream/90' : 'text-[#0a1628]/50 hover:text-[#0a1628]/80'
                 }`}
               >
                 <span className={`text-xs font-light tracking-widest transition-colors ${
-                  activeTab === tab.id 
+                  activeTab === tab.id
                     ? isDark ? 'text-accent' : 'text-[#1a3a6e]'
-                    : isDark ? 'text-cream/20' : 'text-[#0a1628]/20'
+                    : isDark ? 'text-cream/40' : 'text-[#0a1628]/35'
                 }`}>
                   {tab.num}
                 </span>
@@ -118,16 +118,17 @@ export default function TabSection({ activeTab, setActiveTab, isDark }: TabSecti
             transition={{ duration: 0.3 }}
             className="hidden lg:flex items-center gap-3 overflow-hidden"
           >
-            <span className={`text-xs uppercase tracking-[0.2em] font-light ${
-              isDark ? 'text-cream/20' : 'text-[#0a1628]/20'
-            }`}>
-              Fisify × Medicus
-            </span>
-            <div className={`w-6 h-6 border flex items-center justify-center ${
-              isDark ? 'border-accent/20' : 'border-[#1a3a6e]/20'
-            }`}>
-              <span className={`font-display text-xs ${isDark ? 'text-accent' : 'text-[#1a3a6e]'}`}>F</span>
-            </div>
+            <img
+              src="/images/fisify-logo-white.png"
+              alt="Fisify"
+              className={`h-4 opacity-40 ${isDark ? 'brightness-0 invert' : 'brightness-0'}`}
+            />
+            <span className={`text-xs font-light ${isDark ? 'text-cream/20' : 'text-[#0a1628]/20'}`}>×</span>
+            <img
+              src="/images/medicus-logo-white.png"
+              alt="Medicus"
+              className={`h-3 opacity-40 ${isDark ? 'brightness-0 invert' : 'brightness-0'}`}
+            />
           </motion.div>
         </div>
       </div>
