@@ -22,6 +22,17 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleTabChange = (tab: TabId) => {
+    setActiveTab(tab)
+    const content = document.getElementById('content')
+    if (content) {
+      const tabSection = document.getElementById('tab-section')
+      const tabHeight = tabSection?.offsetHeight || 0
+      const contentTop = content.offsetTop - tabHeight
+      window.scrollTo({ top: contentTop, behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="min-h-screen relative bg-gradient-to-b from-[#0a1628] to-[#060f1d]">
       {/* Noise overlay */}
@@ -38,7 +49,7 @@ function App() {
       <HeroSection />
       
       {/* Sticky Tab Menu */}
-      <TabSection activeTab={activeTab} setActiveTab={setActiveTab} isDark={true} />
+      <TabSection activeTab={activeTab} setActiveTab={handleTabChange} isDark={true} />
       
       {/* Content */}
       <main id="content" className="relative">
