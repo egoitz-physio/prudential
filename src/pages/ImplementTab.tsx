@@ -23,9 +23,9 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
   const [expandedPhase, setExpandedPhase] = useState<number | null>(0)
 
   const textMain = isDark ? 'text-cream' : 'text-[#0a1628]'
-  const textMuted = isDark ? 'text-cream/60' : 'text-[#0a1628]/60'
+  const textMuted = isDark ? 'text-cream/75' : 'text-[#0a1628]/65'
   const textAccent = isDark ? 'text-accent' : 'text-[#1a3a6e]'
-  const borderColor = isDark ? 'border-white/[0.06]' : 'border-black/[0.06]'
+  const borderColor = isDark ? 'border-white/[0.10]' : 'border-black/[0.08]'
   const cardBg = isDark ? 'bg-[#0d1a2e]/60' : 'bg-white/80'
 
   /* ══════════════════════════════════════════════════════ */
@@ -167,7 +167,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                   <div className={`w-11 h-11 flex items-center justify-center border transition-all duration-500 ${
                     expandedPhase === i
                       ? isDark ? 'border-accent bg-accent/10' : 'border-[#1a3a6e] bg-[#1a3a6e]/10'
-                      : isDark ? 'border-cream/15 hover:border-cream/25' : 'border-[#0a1628]/15 hover:border-[#0a1628]/25'
+                      : isDark ? 'border-cream/25 hover:border-cream/40' : 'border-[#0a1628]/20 hover:border-[#0a1628]/35'
                   }`}>
                     <span className={`text-xs font-medium tracking-wider transition-colors ${
                       expandedPhase === i ? textAccent : textMuted
@@ -184,7 +184,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                   </div>
                 </button>
                 {i < phases.length - 1 && (
-                  <div className={`flex-1 h-px mx-4 ${isDark ? 'bg-cream/[0.08]' : 'bg-[#0a1628]/[0.08]'}`} />
+                  <div className={`flex-1 h-px mx-4 ${isDark ? 'bg-cream/[0.12]' : 'bg-[#0a1628]/[0.10]'}`} />
                 )}
               </div>
             ))}
@@ -268,7 +268,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                           <span className={`text-xs uppercase tracking-[0.2em] block mb-4 ${textAccent}`}>
                             Entregables
                           </span>
-                          <p className={`text-base font-light leading-relaxed ${isDark ? 'text-cream/70' : 'text-[#0a1628]/70'}`}>
+                          <p className={`text-base font-light leading-relaxed ${isDark ? 'text-cream/85' : 'text-[#0a1628]/75'}`}>
                             {phase.deliverables}
                           </p>
                         </div>
@@ -282,7 +282,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                             {phase.actions.map((action, actionIdx) => (
                               <div key={actionIdx} className="flex items-start gap-3">
                                 <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${isDark ? 'bg-accent/60' : 'bg-[#1a3a6e]/60'}`} />
-                                <span className={`text-[15px] font-light leading-relaxed ${isDark ? 'text-cream/70' : 'text-[#0a1628]/70'}`}>
+                                <span className={`text-[15px] font-light leading-relaxed ${isDark ? 'text-cream/85' : 'text-[#0a1628]/75'}`}>
                                   {action}
                                 </span>
                               </div>
@@ -352,12 +352,12 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                 <span className={`text-[15px] font-light ${textMain}`}>{row.area}</span>
               </div>
               <div className={`col-span-3 p-6 lg:p-8 border-l ${borderColor}`}>
-                <span className={`text-[15px] font-light ${row.medicus === '—' ? (isDark ? 'text-cream/30' : 'text-[#0a1628]/30') : (isDark ? 'text-cream/80' : 'text-[#0a1628]/80')}`}>
+                <span className={`text-[15px] font-light ${row.medicus === '—' ? (isDark ? 'text-cream/45' : 'text-[#0a1628]/40') : (isDark ? 'text-cream/90' : 'text-[#0a1628]/85')}`}>
                   {row.medicus}
                 </span>
               </div>
               <div className={`col-span-4 p-6 lg:p-8 border-l ${borderColor}`}>
-                <span className={`text-[15px] font-light ${isDark ? 'text-cream/80' : 'text-[#0a1628]/80'}`}>
+                <span className={`text-[15px] font-light ${isDark ? 'text-cream/90' : 'text-[#0a1628]/85'}`}>
                   {row.fisify}
                 </span>
               </div>
@@ -376,7 +376,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
             <span
               key={item}
               className={`text-sm tracking-[0.03em] px-4 py-2 border ${
-                isDark ? 'border-cream/[0.08] text-cream/60' : 'border-[#0a1628]/[0.08] text-[#0a1628]/60'
+                isDark ? 'border-cream/[0.12] text-cream/80' : 'border-[#0a1628]/[0.10] text-[#0a1628]/70'
               }`}
             >
               {i === 0 && <span className={`inline-block w-1.5 h-1.5 rounded-full mr-2 ${isDark ? 'bg-accent/60' : 'bg-[#1a3a6e]/60'}`} />}
@@ -490,7 +490,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                   } transition-colors`}
                 >
                   <div className="p-5 lg:p-6 flex items-center gap-3">
-                    <span className={`text-base font-light ${tier.highlighted ? textMain : (isDark ? 'text-cream/70' : 'text-[#0a1628]/70')}`}>
+                    <span className={`text-base font-light ${tier.highlighted ? textMain : (isDark ? 'text-cream/85' : 'text-[#0a1628]/75')}`}>
                       {tier.users}
                     </span>
                     {tier.highlighted && (
@@ -502,7 +502,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                     )}
                   </div>
                   <div className={`p-5 lg:p-6 border-l ${borderColor}`}>
-                    <span className={`text-base ${tier.highlighted ? `font-medium ${textAccent}` : `font-light ${isDark ? 'text-cream/70' : 'text-[#0a1628]/70'}`}`}>
+                    <span className={`text-base ${tier.highlighted ? `font-medium ${textAccent}` : `font-light ${isDark ? 'text-cream/85' : 'text-[#0a1628]/75'}`}`}>
                       {tier.cost}
                     </span>
                   </div>
@@ -546,7 +546,7 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
                   <span className={`stat-value text-5xl lg:text-6xl tracking-tight`}>1,10</span>
                   <span className={`text-xl font-light ${textMuted}`}>€</span>
                 </div>
-                <span className={`text-base font-light ${isDark ? 'text-cream/70' : 'text-[#0a1628]/70'}`}>por licencia / año</span>
+                <span className={`text-base font-light ${isDark ? 'text-cream/85' : 'text-[#0a1628]/75'}`}>por licencia / año</span>
 
                 {/* Savings badge */}
                 <div className={`mt-6 inline-flex items-center gap-2 px-4 py-2 ${
@@ -563,11 +563,11 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
             <div className={`space-y-4 mt-2`}>
               <div className={`flex items-center gap-4 py-4 border-t ${borderColor}`}>
                 <span className={`text-xs uppercase tracking-[0.2em] w-40 flex-shrink-0 ${textAccent}`}>Duración</span>
-                <span className={`text-base font-light ${isDark ? 'text-cream/80' : 'text-[#0a1628]/80'}`}>Dos años</span>
+                <span className={`text-base font-light ${isDark ? 'text-cream/90' : 'text-[#0a1628]/85'}`}>Dos años</span>
               </div>
               <div className={`flex items-center gap-4 py-4 border-t ${borderColor}`}>
                 <span className={`text-xs uppercase tracking-[0.2em] w-40 flex-shrink-0 ${textAccent}`}>Facturación</span>
-                <span className={`text-base font-light ${isDark ? 'text-cream/80' : 'text-[#0a1628]/80'}`}>Mensual</span>
+                <span className={`text-base font-light ${isDark ? 'text-cream/90' : 'text-[#0a1628]/85'}`}>Mensual</span>
               </div>
               <div className={`py-4 border-t ${borderColor}`}>
                 <p className={`text-base font-light ${textMuted}`}>
@@ -577,6 +577,55 @@ export default function ImplementTab({ isDark }: ImplementTabProps) {
             </div>
           </motion.div>
         </div>
+
+        {/* ── Piloto Kinesiología Híbrida ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <div className={`relative border overflow-hidden ${
+            isDark ? 'border-accent/20 bg-accent/[0.04]' : 'border-[#1a3a6e]/20 bg-[#1a3a6e]/[0.04]'
+          } p-10 lg:p-12`}>
+            {/* Accent bar */}
+            <div className={`absolute top-0 left-0 right-0 h-px ${isDark ? 'bg-accent' : 'bg-[#1a3a6e]'}`} />
+
+            <span className={`text-xs uppercase tracking-[0.2em] block mb-2 ${textAccent}`}>
+              Piloto Kinesiología Híbrida — FisifyPro
+            </span>
+            <h3 className={`font-display text-2xl lg:text-3xl mb-10 ${textMain}`}>
+              Propuesta económica para el piloto
+            </h3>
+
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              {/* Duración */}
+              <div>
+                <span className={`text-xs uppercase tracking-[0.2em] block mb-4 ${textMuted}`}>Duración</span>
+                <span className={`stat-value text-4xl lg:text-5xl tracking-tight block`}>12</span>
+                <span className={`text-base font-light ${textMuted}`}>meses</span>
+              </div>
+
+              {/* Volumen */}
+              <div>
+                <span className={`text-xs uppercase tracking-[0.2em] block mb-4 ${textMuted}`}>Volumen</span>
+                <span className={`stat-value text-4xl lg:text-5xl tracking-tight block`}>∞</span>
+                <span className={`text-base font-light ${textMuted}`}>Ilimitado</span>
+              </div>
+
+              {/* Coste */}
+              <div>
+                <span className={`text-xs uppercase tracking-[0.2em] block mb-4 ${textMuted}`}>Coste</span>
+                <div className="flex items-baseline gap-1">
+                  <span className={`stat-value text-4xl lg:text-5xl tracking-tight`}>2.500</span>
+                  <span className={`text-xl font-light ${textMuted}`}>€</span>
+                </div>
+                <span className={`text-base font-light ${textMuted}`}>por mes</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
       </section>
     </div>

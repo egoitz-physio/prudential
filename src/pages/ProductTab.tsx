@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { ArrowRight, Scan, Eye, User, Play, X } from 'lucide-react'
+import { Scan, Eye, User, Play, X } from 'lucide-react'
 
 interface ProductTabProps {
   isDark: boolean
@@ -76,11 +76,6 @@ export default function ProductTab({ isDark }: ProductTabProps) {
       body: 'Incorporamos un modelo de acompañamiento individual donde cada afiliado cuenta con un fisioterapeuta asignado desde el inicio. El profesional realiza una valoración inicial, define objetivos (prevención, fortalecimiento o alivio del dolor) y diseña un plan de ejercicios totalmente personalizado. Además, realiza un seguimiento continuo mediante chat, WhatsApp o llamada.',
       process: ['Evaluación', 'Definición de objetivos', 'Plan personalizado', 'Seguimiento continuo'],
       images: ['/images/onetoone1.webp', '/images/onetoone2.webp'],
-      impacts: [
-        { label: 'Mayor activación', value: 'x3', desc: 'el modelo puede triplicar la tasa de activación gracias al acompañamiento desde el inicio' },
-        { label: 'Mayor adherencia', value: '90%', desc: 'de los usuarios que al menos realizan una sesión llegan a la décima sesión' },
-        { label: 'Mayor eficacia clínica', value: '+', desc: 'mejores resultados de salud con fisioterapia guiada frente a ejercicio sin supervisión' },
-      ],
     },
     {
       num: '02',
@@ -91,12 +86,6 @@ export default function ProductTab({ isDark }: ProductTabProps) {
       showcase: ['/images/bodyos1.webp', '/images/bodyos2.webp'],
       video: '/images/testbodyos.mp4',
       video2: '/images/bodyos.mp4',
-      impacts: [
-        { label: 'Predictive Algorithm', desc: 'Algoritmo de detección de riesgos que analiza patrones biomecánicos y datos del afiliado para anticipar lesiones antes de que ocurran' },
-        { label: 'Segmentación inteligente para Medicus', desc: 'permite diseñar acciones específicas basadas en datos reales de salud' },
-        { label: 'Ultrapersonalización de ejercicios', desc: 'planes adaptados de forma precisa tanto para prevención como para rehabilitación, basados en el perfil funcional real de cada usuario' },
-        { label: 'Mayor contexto clínico para el fisioterapeuta', desc: 'el profesional accede a un perfil completo del paciente — historial, limitaciones, progreso y datos de wearables — para tomar mejores decisiones desde la primera sesión' },
-      ],
     },
     {
       num: '03',
@@ -107,12 +96,6 @@ export default function ProductTab({ isDark }: ProductTabProps) {
       showcase: ['/images/vision-ai.png'],
       video: '/images/vision-ai.mp4',
       videoLabel: 'Ver demo',
-      impacts: [
-        { label: 'Seguridad al hacer ejercicio', desc: 'asegura una correcta ejecución sin necesidad de supervisión presencial' },
-        { label: 'Análisis de movimiento preciso', desc: 'el feedback inmediato aumenta la confianza y el compromiso del afiliado' },
-        { label: 'Mejora de la técnica en el ejercicio', desc: 'el sistema corrige y guía la ejecución en tiempo real para maximizar resultados' },
-        { label: 'Mayor precisión adaptativa de los ejercicios', desc: 'el sistema adapta los programas en base al comportamiento real del usuario' },
-      ],
     },
   ]
 
@@ -379,71 +362,6 @@ export default function ProductTab({ isDark }: ProductTabProps) {
                 </div>
               )}
 
-              {/* Impact metrics */}
-              <div className="mt-16">
-                <span className={`text-[10px] uppercase tracking-[0.25em] block mb-8 ${textMuted}`}>
-                  Impacto
-                </span>
-
-                {'value' in (dev.impacts[0] || {}) ? (
-                  /* Metrics with values — Development 1 */
-                  <div className={`grid md:grid-cols-3 gap-px ${isDark ? 'bg-white/[0.03]' : 'bg-black/[0.03]'}`}>
-                    {dev.impacts.map((impact, impactIdx) => (
-                      <motion.div
-                        key={impact.label}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 + impactIdx * 0.1 }}
-                        viewport={{ once: true }}
-                        className={`${cardBg} p-8 lg:p-10`}
-                      >
-                        {'value' in impact && (
-                          <div className="mb-4">
-                            <span className="stat-value text-4xl lg:text-5xl tracking-tight">
-                              {(impact as { value: string }).value}
-                            </span>
-                            {'unit' in impact && (
-                              <span className={`text-lg font-light ml-0.5 ${textMuted}`}>
-                                {(impact as { unit: string }).unit}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        <h5 className={`text-sm font-medium mb-2 ${textMain}`}>
-                          {impact.label}
-                        </h5>
-                        <p className={`text-[13px] font-light leading-relaxed ${textMuted}`}>
-                          {impact.desc}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div>
-                ) : (
-                  /* Text-only impacts — Developments 2 & 3 */
-                  <div className="space-y-0">
-                    {dev.impacts.map((impact, impactIdx) => (
-                      <motion.div
-                        key={impact.label}
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.15 + impactIdx * 0.08 }}
-                        viewport={{ once: true }}
-                        className={`flex items-start gap-6 py-6 border-b ${borderColor} last:border-b-0`}
-                      >
-                        <ArrowRight size={14} className={`mt-1 flex-shrink-0 ${textAccent}`} />
-                        <div>
-                          <h5 className={`text-sm font-medium mb-1 ${textMain}`}>
-                            {impact.label}
-                          </h5>
-                          <p className={`text-[13px] font-light leading-relaxed ${textMuted}`}>
-                            {impact.desc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-              </div>
             </motion.div>
           </div>
         ))}
