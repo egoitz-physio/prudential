@@ -15,9 +15,9 @@ const allTabs = [
   { id: 'objetivo' as TabId, label: 'Objetivo', num: '01' },
   { id: 'results' as TabId, label: 'Resultados', num: '02' },
   { id: 'product' as TabId, label: 'Producto', num: '03' },
-  { id: 'value' as TabId, label: 'Valor', num: '04' },
-  { id: 'implement' as TabId, label: 'Implementación', num: '05' },
-  { id: 'kinesiologia' as TabId, label: 'Kinesiología', num: '06' },
+  { id: 'kinesiologia' as TabId, label: 'Kinesiología', num: '04' },
+  { id: 'value' as TabId, label: 'Valor', num: '05' },
+  { id: 'implement' as TabId, label: 'Implementación', num: '06' },
 ]
 
 export default function TabSection({ activeTab, setActiveTab, isDark, clientLogo = '/images/medicus-logo-white.png', clientName = 'Medicus', visibleTabs }: TabSectionProps) {
