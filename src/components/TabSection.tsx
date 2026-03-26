@@ -14,7 +14,7 @@ interface TabSectionProps {
 
 const allTabs = [
   { id: 'objetivo' as TabId, label: 'Objetivo' },
-  { id: 'results' as TabId, label: 'Datos' },
+  { id: 'results' as TabId, label: 'Planes' },
   { id: 'product' as TabId, label: 'Producto' },
   { id: 'value' as TabId, label: 'Valor' },
   { id: 'implement' as TabId, label: 'Plan de trabajo' },
