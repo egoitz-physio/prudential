@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ClientPresentationApp from './components/ClientPresentationApp'
-import OmintApp from './pages/OmintApp'
+import PrudentialApp from './pages/PrudentialApp'
 import AIGApp from './pages/AIGApp'
 import ZurichApp from './pages/ZurichApp'
 
@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ZurichApp homePath="/" />} />
-        <Route path="/omint" element={<OmintApp />} />
+        <Route path="/" element={<PrudentialApp />} />
+        <Route path="/prudential" element={<PrudentialApp />} />
         <Route path="/AIG" element={<AIGApp homePath="/AIG" />} />
         <Route path="/aig" element={<AIGApp homePath="/AIG" />} />
         <Route path="/Zurich" element={<ZurichApp homePath="/Zurich" />} />

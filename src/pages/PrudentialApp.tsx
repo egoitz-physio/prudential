@@ -1,10 +1,10 @@
 import ClientPresentationApp from '../components/ClientPresentationApp'
 import type { TabId } from '../components/ClientPresentationApp'
 
-const CLIENT_NAME = 'Omint'
-const CLIENT_LOGO = '/images/logo-omint.png'
+const CLIENT_NAME = 'Prudential'
+const CLIENT_LOGO = '/images/logo-prudential.svg'
 
-export default function OmintApp() {
+export default function PrudentialApp() {
   const visibleTabs: TabId[] = ['objetivo', 'results', 'product', 'value', 'implement']
 
   return (
